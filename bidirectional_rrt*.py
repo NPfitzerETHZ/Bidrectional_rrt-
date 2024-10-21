@@ -7,11 +7,17 @@ import matplotlib.pyplot as plt
 import matplotlib.lines as line
 from matplotlib.collections import LineCollection
 
-from dg_commons import SE2Transform
+from typing import Tuple
+Point = Tuple[float, float]
+
 import shapely
 import time
 
 # start_time = time.time()
+class SE2Transform:
+    def __init__(self, p: Sequence[float], theta: float):
+        self.p: np.ndarray = np.array(p, dtype="float64")
+        self.theta: float = float(theta)
 
 
 class Node:
